@@ -51,7 +51,9 @@ module.exports = (_, argv) => ({
       remotes: {
         dashboard: "dashboard@http://localhost:8080/remoteEntry.js",
       },
-      exposes: {},
+      exposes: {
+        "./mockData": "./src/people.json",
+      },
       shared: require("./package.json").dependencies,
     }),
     new HtmlWebPackPlugin({
